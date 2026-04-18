@@ -1,11 +1,3 @@
----
-name: supplementary.yaml
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
 
 name: Supplementary Requirement
 description: Non-functional requirement (Performance, Security, etc.)
