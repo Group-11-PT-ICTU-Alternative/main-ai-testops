@@ -1,11 +1,3 @@
----
-name: strq.yaml
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
 
 name: Stakeholder Request
 description: Original request from stakeholders (Managers, Students, etc.)
