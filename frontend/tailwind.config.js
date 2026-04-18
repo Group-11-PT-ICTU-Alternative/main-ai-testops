@@ -1,0 +1,43 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'hce-blue': {
+          DEFAULT: '#1e40af',
+          light: '#3b82f6',
+          dark: '#1e3a8a',
+          bg: '#1e40af'
+        },
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        danger: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+        },
+        warning: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+        }
+      }
+    },
+  },
+  plugins: [],
+}

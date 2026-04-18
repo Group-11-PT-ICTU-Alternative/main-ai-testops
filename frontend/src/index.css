@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --hce-mint: #14b8a6;
+    --hce-mint-light: #5eead4;
+    --hce-mint-dark: #0f766e;
+    --hce-bg-primary: #f0fdfa;
+    --hce-bg-secondary: #ccfbf1;
+    --hce-bg-tertiary: #99f6e4;
+    --hce-text-primary: #134e4a;
+    --hce-text-secondary: #0f766e;
+    --hce-accent: #06b6d4;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    color: var(--hce-text-primary);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-teal-700 border border-teal-200 font-medium py-3 px-6 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .card {
+    @apply bg-white border border-teal-100 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+  }
+  
+  .badge-traceability {
+    @apply inline-block bg-teal-100 text-teal-800 text-xs font-semibold px-2 py-1 rounded-full ml-2;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 text-teal-700 hover:bg-teal-50 hover:text-teal-900 transition-all duration-200 rounded-xl;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg;
+  }
+  
+  .logo-hce {
+    @apply bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-500 text-white font-bold text-2xl rounded-2xl shadow-lg;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-hce:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #059669, 0 0 20px #059669, 0 0 30px #059669;
+    }
+    to {
+      box-shadow: 0 0 20px #10b981, 0 0 30px #10b981, 0 0 40px #10b981;
+    }
+  }
+}

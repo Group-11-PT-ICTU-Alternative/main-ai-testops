@@ -1,0 +1,51 @@
+# HCE-FMS Coding Standards & Rules
+
+## MANDATORY RULES (Zero Tolerance Policy)
+
+### 1. Financial Data Handling (SUPL03)
+- **BẮT BUỘC** dùng `java.math.BigDecimal` cho tất cả các trường liên quan đến tiền tệ
+- KHÔNG bao giờ dùng `double` hoặc `float` cho tính toán tài chính
+- Luôn sử dụng `BigDecimal` với `MathContext.DECIMAL128` cho tính toán chính xác cao
+
+### 2. Database Transaction Management
+- **BẮT BUỘC** dùng `@Transactional` cho tất cả các hàm update/insert/delete database
+- Sử dụng `@Transactional(readOnly = true)` cho các hàm chỉ đọc
+- Xác định rõ `rollbackFor` cho các exception cụ thể
+
+### 3. API Response Standardization
+- **BẮT BUỘC** trả về format chung `ApiResponse<T>` cho tất cả API endpoints
+- Không trả về raw object hoặc exception trực tiếp
+- Sử dụng consistent error codes và messages
+
+## Code Quality Standards
+
+### SOLID Principles
+- Single Responsibility: Mỗi class chỉ có một lý do để thay đổi
+- Open/Closed: Mở rộng bằng interface, không sửa đổi code hiện có
+- Liskov Substitution: Subclass phải thay thế được parent class
+- Interface Segregation: Tách interface nhỏ, chuyên biệt
+- Dependency Inversion: Phụ thuộc vào abstraction, không phải implementation
+
+### Security Standards
+- Validate tất cả input parameters
+- Sử dụng parameterized queries để tránh SQL injection
+- Implement proper authentication and authorization
+- Log security events appropriately
+
+### Performance Standards
+- Sử dụng connection pooling cho database
+- Implement caching strategy với Redis
+- Optimize queries và avoid N+1 problems
+- Monitor memory usage và garbage collection
+
+## Naming Conventions
+- Class names: PascalCase (e.g., PaymentService)
+- Method names: camelCase (e.g., generateQrCode)
+- Constants: UPPER_SNAKE_CASE (e.g., MAX_RETRY_ATTEMPTS)
+- Database tables: snake_case (e.g., tuition_fees)
+
+## Testing Requirements
+- Minimum 80% code coverage
+- Unit tests cho business logic
+- Integration tests cho database operations
+- Mock external dependencies
